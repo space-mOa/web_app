@@ -1,0 +1,244 @@
+// IMPORTS
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// VARIABLES	
+$homepage_background: #3734E8;
+$homepage_text: white;
+$homepage_text_unused: #B8B8B8;
+$popis_app: #ADFFD7; 
+$popis_background_2: #A700FF;
+$popis_background: #4200FF;
+$color_form: #282828;
+
+html, body {
+	margin: 0;
+    font-family: 'Roboto', sans-serif;
+	background-color: $homepage_background;
+	color: $homepage_text;
+}
+
+a {
+	color: white;
+}
+
+h1 {
+	text-align: center;
+	font-size: 65px;
+	letter-spacing: 2px;
+	font-weight: 300;
+	color: $popis_app;
+	font-family: 'Josefina Sans', sans-serif;
+}
+
+h2 {
+	font-size: 18px;	
+}
+
+h3 {
+	// $popis_app
+	color: white; 
+	font-size: 24px;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+// https://dependabot.com/
+
+.hlavicka_h1, h1 {
+	font-size: 58px;
+}
+
+.hlavicka::before {
+	content: none;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 20px 1fr 20px;
+	grid-template-areas: "about" "formular";
+	margin-top: 104px;
+	z-index: 2;
+}
+
+.about {
+	grid-area: about;
+	grid-column: 2 / 3;
+	grid-row: 1;
+	text-align: center;
+}
+
+.form_account {
+	grid-area: formular;
+	grid-column: 2 / 3;
+	grid-row: 2;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 85px;
+	.buttons_form_account {
+		width: 100%;
+		#log_account {
+			float: right;
+			margin-right: 5px;
+			font-size: 18px;
+			background-color: $homepage_background;
+			color:  $homepage_text_unused;
+			border: none;
+		}
+		#separator {
+			width: 3px;
+			height: 26px;
+			margin-right: 5px;
+			margin-top: -3px;
+			display: inline-block;
+			background-color: $color_form;
+			float: right;
+		}
+		#reg_account {
+			float: right;
+			font-size: 18px;
+			margin-right: 5px;
+			background-color: $homepage_background;
+			color:  $homepage_text;
+			border: none;
+		}
+		// animate 
+	}
+	.form {
+		width: 95%;
+		margin-top: 45px;
+		.label_account_form {
+			font-size: 18px;
+		}
+		.input_account_form {
+			width: 95%;
+			height: 39px;
+			margin-top: 5px;
+			margin-bottom: 32px;
+			padding: 0px 2% 0px 2%; 
+			border: 3px solid $color_form;
+			font-size: 15px;
+			color: $homepage_text;
+			background-color: $homepage_background;
+		}
+		.confirm_account_form {
+			float: right;
+			padding: 11px 42px 11px 42px;
+			background-color: $color_form;	
+			color: $homepage_text;
+			font-size: 18px;
+			border: none;
+		}
+	}
+}
+
+.other {
+	grid-area: other;
+	grid-column: 2 / 3;
+	grid-row: 3;
+	display: none;
+}
+
+.images_about {
+	margin-top: 150px;
+	text-align: center;
+	background-color: $popis_background;
+	.images_warpper {
+		.popis_app {
+			color: white; 
+		}
+	}
+	.popis {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#img_wrapper {
+		padding-top: 60px;
+		padding-bottom: 23px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.hlavicka {
+		padding-top: 72px;
+		width: 100%;
+		height: 156px;
+		.hlavicka_h1, h1 {
+			float: left;	
+			margin-left: 67px;
+		}
+	}
+	.hlavicka::before {
+		content: url("./souhvezdi_1.png");
+		position: relative;
+		float: right;
+		margin-right: 94px;
+		margin-top: 38px;
+	}
+	.wrapper {
+		grid-template-columns: 67px 1fr 86px 1fr 67px;
+		grid-template-areas: "about" "formular";
+	}
+	.about {
+		grid-row: 1;	
+		margin-top: 75px;
+		text-align: left;
+	}
+	.form_account {
+		grid-row: 1;
+		grid-column: 4 / 5;
+	}
+	.images_about {
+		.images_wrapper {
+			display: flex;	
+			flex-direction: row; 
+			justify-content: space-around;	
+		}
+		.operator {
+			width: 33%;
+		}
+		.astronaut {
+			width: 33%;
+		}	
+		.popis_app {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.wrapper {
+		grid-template-columns: 67px 264px auto 484px 176px;
+	}
+	.images_about {
+		background-image: url("planet.png");
+		background-repeat: no-repeat;
+		background-position: left top;
+		.operator {
+			z-index: 2;
+		}
+		.astronaut {
+			z-index: 2;
+		}
+	}	
+}
+
+@media only screen and (min-width: 1500px) {
+	.images_about {
+		.operator {
+			width: 25%;
+		}
+		.astronaut {
+			width: 25%;
+		}
+		.popis_app {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}	
+}
+
+
+
