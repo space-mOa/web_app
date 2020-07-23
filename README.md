@@ -1,2 +1,2 @@
-# web_app
-Kosmonauti 
+Hotovo:
+  [x] úvodní responzivní stránka
